@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 프린터</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Marked.js CDN for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Markdown 프린터</h1>
+            <p>Markdown 파일을 업로드하거나 직접 입력하여 프린트하세요</p>
+        </header>
+
+        <div class="input-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="upload">파일 업로드</button>
+                <button class="tab-btn" data-tab="text">직접 입력</button>
+            </div>
+
+            <div class="tab-content active" id="upload">
+                <div class="file-upload">
+                    <input type="file" id="fileInput" accept=".md,.markdown,.txt">
+                    <label for="fileInput">
+                        <span>📁 Markdown 파일 선택</span>
+                        <span class="file-name" id="fileName">선택된 파일 없음</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="tab-content" id="text">
+                <textarea id="markdownInput" placeholder="여기에 Markdown 텍스트를 입력하세요...
+
+예시:
+# 제목
+## 부제목
+- 목록 항목 1
+- 목록 항목 2
+
+**굵은 글씨** 및 *기울임꼴*
+
+[링크](https://example.com)"></textarea>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="previewBtn" class="btn btn-secondary">미리보기</button>
+            <button id="printBtn" class="btn btn-primary">프린트</button>
+            <button id="clearBtn" class="btn btn-outline">초기화</button>
+        </div>
+
+        <div class="preview-section" id="previewSection">
+            <h2>미리보기</h2>
+            <div class="preview-content" id="previewContent"></div>
+        </div>
+    </div>
+
+    <!-- Print Area (hidden on screen, shown only during print) -->
+    <div class="print-only" id="printArea"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
