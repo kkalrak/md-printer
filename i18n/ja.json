@@ -1,7 +1,8 @@
 {
   "app": {
     "title": "Markdownプリンター",
-    "description": "Markdownファイルをアップロードするか、直接入力して印刷します"
+    "description": "Markdownファイルをアップロードするか、直接入力して印刷します",
+    "privacy": "🔒 ドキュメントはサーバーにアップロードされず、ブラウザで100%実行されます。"
   },
   "tabs": {
     "upload": "ファイルアップロード",

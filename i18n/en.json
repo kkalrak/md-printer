@@ -1,7 +1,8 @@
 {
   "app": {
     "title": "Markdown Printer",
-    "description": "Upload a Markdown file or enter text directly to print"
+    "description": "Upload a Markdown file or enter text directly to print",
+    "privacy": "🔒 Your documents are not uploaded to any server. Everything runs 100% in your browser."
   },
   "tabs": {
     "upload": "Upload File",

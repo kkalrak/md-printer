@@ -1,7 +1,8 @@
 {
   "app": {
     "title": "Markdown打印机",
-    "description": "上传Markdown文件或直接输入文本进行打印"
+    "description": "上传Markdown文件或直接输入文本进行打印",
+    "privacy": "🔒 您的文档不会上传到任何服务器。所有操作100%在浏览器中运行。"
   },
   "tabs": {
     "upload": "上传文件",
