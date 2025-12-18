@@ -14,6 +14,30 @@ const tabContents = document.querySelectorAll('.tab-content');
 // Current markdown content
 let currentMarkdown = '';
 
+// Initialize i18n and update placeholders
+window.addEventListener('DOMContentLoaded', async () => {
+    await i18n.init();
+    updatePlaceholders();
+});
+
+// Language change handler
+window.addEventListener('languageChanged', () => {
+    updatePlaceholders();
+    updateFileName();
+});
+
+// Update placeholders with current language
+function updatePlaceholders() {
+    markdownInput.placeholder = i18n.t('input.placeholder');
+}
+
+// Update file name display
+function updateFileName() {
+    if (!fileInput.files || fileInput.files.length === 0) {
+        fileName.textContent = i18n.t('upload.noFile');
+    }
+}
+
 // Tab Switching
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -46,7 +70,7 @@ fileInput.addEventListener('change', (e) => {
         };
         reader.readAsText(file);
     } else {
-        fileName.textContent = '선택된 파일 없음';
+        fileName.textContent = i18n.t('upload.noFile');
     }
 });
 
@@ -63,7 +87,7 @@ previewBtn.addEventListener('click', () => {
 // Print Button Handler
 printBtn.addEventListener('click', () => {
     if (!currentMarkdown) {
-        alert('프린트할 내용이 없습니다. Markdown 파일을 업로드하거나 텍스트를 입력해주세요.');
+        alert(i18n.t('messages.noPrintContent'));
         return;
     }
 
@@ -77,11 +101,11 @@ printBtn.addEventListener('click', () => {
 
 // Clear Button Handler
 clearBtn.addEventListener('click', () => {
-    if (confirm('모든 내용을 초기화하시겠습니까?')) {
+    if (confirm(i18n.t('messages.confirmClear'))) {
         currentMarkdown = '';
         markdownInput.value = '';
         fileInput.value = '';
-        fileName.textContent = '선택된 파일 없음';
+        fileName.textContent = i18n.t('upload.noFile');
         previewContent.innerHTML = '';
         previewSection.classList.remove('active');
         printArea.innerHTML = '';
@@ -91,7 +115,7 @@ clearBtn.addEventListener('click', () => {
 // Render Preview Function
 function renderPreview() {
     if (!currentMarkdown) {
-        alert('미리볼 내용이 없습니다. Markdown 파일을 업로드하거나 텍스트를 입력해주세요.');
+        alert(i18n.t('messages.noPreviewContent'));
         return;
     }
 
@@ -114,7 +138,7 @@ function renderPreview() {
         // Scroll to preview
         previewSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (error) {
-        alert('Markdown 파싱 중 오류가 발생했습니다: ' + error.message);
+        alert(i18n.t('messages.parseError') + error.message);
         console.error('Markdown parsing error:', error);
     }
 }
@@ -172,11 +196,16 @@ uploadArea.addEventListener('drop', (e) => {
             };
             reader.readAsText(file);
         } else {
-            alert('Markdown 파일(.md, .markdown) 또는 텍스트 파일(.txt)만 지원됩니다.');
+            alert(i18n.t('messages.fileTypeError'));
         }
     }
 });
 
-// Initialize
-console.log('Markdown 프린터가 준비되었습니다.');
-console.log('단축키: Ctrl/Cmd + P (프린트), Ctrl/Cmd + Enter (미리보기)');
+// Initialize - console logs will be shown after i18n is loaded
+window.addEventListener('DOMContentLoaded', () => {
+    // Wait a bit for i18n to initialize
+    setTimeout(() => {
+        console.log(i18n.t('messages.ready'));
+        console.log(i18n.t('messages.shortcuts'));
+    }, 100);
+});

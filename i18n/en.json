@@ -1,0 +1,34 @@
+{
+  "app": {
+    "title": "Markdown Printer",
+    "description": "Upload a Markdown file or enter text directly to print"
+  },
+  "tabs": {
+    "upload": "Upload File",
+    "input": "Direct Input"
+  },
+  "upload": {
+    "label": "📁 Select Markdown File",
+    "noFile": "No file selected"
+  },
+  "input": {
+    "placeholder": "Enter Markdown text here...\n\nExample:\n# Heading\n## Subheading\n- List item 1\n- List item 2\n\n**Bold text** and *italic*\n\n[Link](https://example.com)"
+  },
+  "buttons": {
+    "preview": "Preview",
+    "print": "Print",
+    "clear": "Clear"
+  },
+  "preview": {
+    "title": "Preview"
+  },
+  "messages": {
+    "noPrintContent": "No content to print. Please upload a Markdown file or enter text.",
+    "confirmClear": "Are you sure you want to clear all content?",
+    "noPreviewContent": "No content to preview. Please upload a Markdown file or enter text.",
+    "parseError": "Error parsing Markdown: ",
+    "fileTypeError": "Only Markdown files (.md, .markdown) or text files (.txt) are supported.",
+    "ready": "Markdown Printer is ready.",
+    "shortcuts": "Shortcuts: Ctrl/Cmd + P (Print), Ctrl/Cmd + Enter (Preview)"
+  }
+}

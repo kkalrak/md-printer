@@ -1,0 +1,34 @@
+{
+  "app": {
+    "title": "Markdown打印机",
+    "description": "上传Markdown文件或直接输入文本进行打印"
+  },
+  "tabs": {
+    "upload": "上传文件",
+    "input": "直接输入"
+  },
+  "upload": {
+    "label": "📁 选择Markdown文件",
+    "noFile": "未选择文件"
+  },
+  "input": {
+    "placeholder": "在此输入Markdown文本...\n\n示例:\n# 标题\n## 副标题\n- 列表项 1\n- 列表项 2\n\n**粗体文本** 和 *斜体*\n\n[链接](https://example.com)"
+  },
+  "buttons": {
+    "preview": "预览",
+    "print": "打印",
+    "clear": "清除"
+  },
+  "preview": {
+    "title": "预览"
+  },
+  "messages": {
+    "noPrintContent": "没有要打印的内容。请上传Markdown文件或输入文本。",
+    "confirmClear": "确定要清除所有内容吗？",
+    "noPreviewContent": "没有要预览的内容。请上传Markdown文件或输入文本。",
+    "parseError": "解析Markdown时出错: ",
+    "fileTypeError": "仅支持Markdown文件（.md、.markdown）或文本文件（.txt）。",
+    "ready": "Markdown打印机已准备就绪。",
+    "shortcuts": "快捷键: Ctrl/Cmd + P（打印）、Ctrl/Cmd + Enter（预览）"
+  }
+}

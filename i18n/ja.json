@@ -1,0 +1,34 @@
+{
+  "app": {
+    "title": "Markdownプリンター",
+    "description": "Markdownファイルをアップロードするか、直接入力して印刷します"
+  },
+  "tabs": {
+    "upload": "ファイルアップロード",
+    "input": "直接入力"
+  },
+  "upload": {
+    "label": "📁 Markdownファイルを選択",
+    "noFile": "ファイルが選択されていません"
+  },
+  "input": {
+    "placeholder": "ここにMarkdownテキストを入力してください...\n\n例:\n# 見出し\n## 小見出し\n- リスト項目 1\n- リスト項目 2\n\n**太字** および *斜体*\n\n[リンク](https://example.com)"
+  },
+  "buttons": {
+    "preview": "プレビュー",
+    "print": "印刷",
+    "clear": "クリア"
+  },
+  "preview": {
+    "title": "プレビュー"
+  },
+  "messages": {
+    "noPrintContent": "印刷するコンテンツがありません。Markdownファイルをアップロードするか、テキストを入力してください。",
+    "confirmClear": "すべてのコンテンツをクリアしてもよろしいですか？",
+    "noPreviewContent": "プレビューするコンテンツがありません。Markdownファイルをアップロードするか、テキストを入力してください。",
+    "parseError": "Markdown解析中にエラーが発生しました: ",
+    "fileTypeError": "Markdownファイル（.md、.markdown）またはテキストファイル（.txt）のみがサポートされています。",
+    "ready": "Markdownプリンターの準備ができました。",
+    "shortcuts": "ショートカット: Ctrl/Cmd + P（印刷）、Ctrl/Cmd + Enter（プレビュー）"
+  }
+}
