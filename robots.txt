@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kkalrak.github.io/md-printer/sitemap.xml
+Sitemap: https://md-printer.pages.dev/sitemap.xml
